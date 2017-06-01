@@ -8,6 +8,7 @@ import promise from 'redux-promise';
 import reducers from './reducers';
 import PostsIndex from './components/PostsIndex';
 import PostNew from './components/PostNew'
+import PostShow from './components/PostShow';
 
 const createStoreWithMiddleware = applyMiddleware(
   promise
@@ -18,6 +19,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path="/posts/new" component={PostNew} />
+        <Route path="/posts/:id" component={PostShow} />
         <Route path="/" component={PostsIndex} />
       </Switch>
     </BrowserRouter>
